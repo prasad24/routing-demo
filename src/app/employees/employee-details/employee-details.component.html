@@ -1,0 +1,22 @@
+<div *ngIf="employee.id" class="employee-card">
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    <strong>{{errorMessage}}</strong>
+  </div>
+  <div class="card">
+    <!-- <img class="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap"> -->
+    <div class="card-body">
+      <h4 class="card-title">{{employee.firstName + ' ' + employee.lastName }}</h4>
+      <p class="card-text">ID: {{employee.id}}</p>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Department: <a routerLink="/departments/department/{{employee.department}}">{{employee.department}}</a></li>
+          <li class="list-group-item">Gender: {{employee.gender}}</li>
+          <li class="list-group-item">Email: {{employee.email}} </li>
+          <li class="list-group-item">Joining Date: {{employee.joinDate | date:shortDate}}</li>
+          <li class="list-group-item">Salary: {{employee.salary | currency}}</li>
+        </ul>    
+    </div>
+    <div class="card-footer">
+      <button (click)="onBack()" class="btn btn-primary">Back</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="employee-list">
+  <div *ngIf="errorMessage; else ShowList" class="alert alert-danger"><strong>{{errorMessage}}</strong></div>
+  <ng-template #ShowList>
+    <div class="card">
+      <!-- <img class="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap"> -->
+      <div class="card-body">
+        <h4 class="card-title">Employees List</h4>
+        <p>
+          Sort By:
+          <select (change)="sortBy=SortBy.value" #SortBy>
+            <option selected value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="department">Department</option>
+            <option value="gender">Gender</option>
+            <option value="joinDate">Joining Date</option>
+          </select>
+        </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let employee of employees | sort:'emp':sortBy; let index = index;">
+            <a [class.active]="selectedEmployeeId === employee.id" routerLink="/employees/employee/{{employee.id}}">{{employee.firstName + ' ' + employee.lastName}}</a>
+          </li>
+        </ul>    
+      </div>
+      <!-- <div class="card-footer">
+      </div> -->
+    </div>
+  </ng-template>
+</div>  

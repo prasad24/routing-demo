@@ -1,0 +1,28 @@
+<div *ngIf="department.id" class="deparment-card">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      <strong>{{errorMessage}}</strong>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{department.name }}</h4>
+        <p class="card-text">ID: {{department.id}}</p>
+      </div>
+      <div class="card-footer">
+        <button *ngIf="!showEmployee; else EmployeeCount" (click)="showEmployees()" class="btn btn-primary">Show Employees</button>
+        <ng-template #EmployeeCount>
+            Total Employees: <span class="badge badge-pill badge-primary">{{employees.length}}</span>
+        </ng-template>
+      </div>
+    </div>
+    <div *ngIf="showEmployee" class="card">
+      <div class="card-body">
+        <h6 *ngIf="employees.length===0">There are no employees in this department</h6>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let employee of employees | sort:'emp':firstName">
+              <a [class.active]="selectedEmployeeId === employee.id" routerLink="/employees/employee/{{employee.id}}">{{employee.firstName + ' ' + employee.lastName}}</a>
+            </li>
+          </ul>    
+        </div>
+    </div>  
+  </div>
+  

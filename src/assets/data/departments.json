@@ -1,0 +1,10 @@
+[{"id":"5fab6caa-20c2-4ac7-b7c8-d2eade3d1b19","name":"Marketing"},
+    {"id":"7c104ae4-004e-4a4b-b75b-a3d2053a43f5","name":"Engineering"},
+    {"id":"b2d5b4d8-c282-446e-9368-21e498a500c3","name":"Research and Development"},
+    {"id":"53decfa6-bcee-473f-88ac-8ba4173d1944","name":"Accounting"},
+    {"id":"e96092d3-7ec5-436b-bc39-22bc26feb715","name":"Legal"},
+    {"id":"4c47a31e-530a-45da-b84f-a82d99fe533b","name":"Business Development"},
+    {"id":"f55c8486-79d6-4035-a6ab-42c2e9aeddd9","name":"Training"},
+    {"id":"d08ef96a-b329-45a4-885c-b3e83d5e7cbe","name":"Support"},
+    {"id":"5d043d51-21be-463c-809c-2e995b1712e4","name":"Product Management"},
+    {"id":"a41baa2d-5662-4c26-8367-b5b3b5942e76","name":"Services"}]
